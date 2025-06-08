@@ -1,0 +1,116 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Inria Serif", serif;
+  /* font-style: italic; */
+}
+
+.action-btn {
+  background-color: #003049;
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 3rem;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: white;
+  color: #003049;
+  font-weight: bold;
+  border: 1px solid #003049;
+}
+
+.custom-navlink {
+  position: relative;
+  text-decoration: none;
+
+}
+
+.custom-navlink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background-color: #426578;
+  transition: width 0.3s ease;
+}
+
+.custom-navlink:hover::after,
+.active-link::after {
+  width: 100%;
+}
+
+.active-link {
+  text-decoration: underline;
+  font-weight: 800;
+  color: #542626 !important;
+  /* Active color */
+}
+
+footer {
+  background-color: #e3eded;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.copyright {
+  background-color: #003049;
+  color: rgb(255, 255, 255);
+  /* font-weight: bold; */
+}
+
+.pt-20 {
+  padding-top: 150px;
+}
+
+
+.hero-section .overlay {
+  background-color: rgba(0, 0, 0, 0.30);
+  position: absolute;
+  z-index: 0;
+}
+
+.hero-section .z-1 {
+  z-index: 1 !important;
+  /* Ensures text is above overlay */
+}
+
+ .hero-title {
+  font-size: 2.8rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 576px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.3rem;
+  }
+}
+
+.about-btn {
+  background-color: #753535;
+  color: white;
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 3rem;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: white;
+  color: #753535;
+  font-weight: bold;
+  border: 1px solid #753535;
+}
+
+.chess{
+  background-color: #d9f0f4;
+}
