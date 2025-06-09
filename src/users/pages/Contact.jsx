@@ -3,6 +3,7 @@ import Footer from "../../components/Footer"
 import { useInView } from 'react-intersection-observer'
 import Chat from '../components/Chat'
 import ScrollUp from '../../components/ScrollUp'
+import { Container, Row,Col,Button } from "react-bootstrap"
 
 function Contact() {
    const [heroRef, inViewHero] = useInView({ triggerOnce: true, threshold: 0.5 })
@@ -27,6 +28,36 @@ function Contact() {
           <p className='fs-5'>Let’s Craft Something Beautiful Together-<br/>Reach Out!</p>
          
         </div>
+            </section>
+
+            {/* main */}
+            <section className="py-5" style={{ backgroundColor: '#fff8f2' }}>
+              <Container>
+                <Row className="">
+
+                  {/* left contact info */}
+                  <Col md={4}>
+                  <h4 className="fw-bold mb-3">Conatct Us</h4>
+                  <p>For bulk orders, custom embroidery, or any queries - reach out to us anytime!</p>
+
+                  <div className="mb-3">
+                    <Button variant='light' className='w-100 text-start mb-2'>
+                📍 Karunagappally, Kerala, India
+              </Button>
+              <Button variant='light' className='w-100 text-start mb-2'>
+                📞 +91 xxxxxxxxxx
+              </Button>
+              <Button variant='light' className='w-100 text-start mb-2'>
+                ✉️ tehtotil@gmail.com
+              </Button>
+              <Button variant='light' className='w-100 text-start mb-2'>
+                💬 Message on Whatsapp
+              </Button>
+                  </div>
+                  </Col>
+
+                </Row>
+              </Container>
             </section>
 
             <Chat/>

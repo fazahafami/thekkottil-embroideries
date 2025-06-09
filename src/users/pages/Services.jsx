@@ -8,6 +8,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap'
 function Services() {
     const [heroRef, inViewHero] = useInView({ triggerOnce: true, threshold: 0.5 })
     const [serviceref, inViewService] = useInView({ triggerOnce: true, threshold: 0.1 });
+    const [featuresref, inViewFeatures] = useInView({ triggerOnce: true, threshold: 0.1 });
     const services = [
         {
             title: 'Custom Logo Embroidery',
@@ -45,6 +46,14 @@ function Services() {
             img: '/images/services/scallop.png'
         }
     ];
+
+    const features = [
+    { icon: '/images/icons/handmade.png', title: 'Handcrafted Quality' },
+    { icon: '/images/icons/clock.png', title: 'On-Time Delivery' },
+    { icon: '/images/icons/artisan.png', title: 'Skilled Artisans' },
+    { icon: '/images/icons/order.png', title: 'Bulk Order Capability' },
+    { icon: '/images/icons/personalised.png', title: 'Personalized Design Consultation' }
+  ];
     return (
         <div>
             <Header />
@@ -69,14 +78,14 @@ function Services() {
             </section>
 
             {/* serviceCategories */}
-            <section className='py-5' style={{ backgroundColor: '#E5DECD' }} ref={serviceref}>
+            <section className='py-5' style={{ backgroundColor: '#E5DECD' }}>
                 <Container>
                     <h3 className='fw-bold text-center mb-4' style={{ color: '#003049' }}>SERVICE CATEGORIES</h3>
 
-                    <Row className='justify-content-center py-5'>
+                    <Row className='justify-content-center py-5'  ref={serviceref}>
 
                         {services.map((services, index) => (
-                            <Col key={index} xs={10} sm={5} md={4} 
+                            <Col key={index} xs={10} sm={5} md={3} 
                             className={`mb-4 d-flex justify-content-center ${inViewService ? 'animate__animated animate__fadeInUp' : ''}`}
                              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}>
                                 <Card
@@ -93,7 +102,34 @@ function Services() {
 
                     </Row>
                 </Container>
+            </section>
 
+
+            {/* why choose us */}
+            <section className='py-5'style={{ backgroundColor: '#f6efdf' }}>
+                <Container>
+                    <h3 className='fw-bold text-center mb-4' style={{ color: '#003049' }}>WHY CHOOSE US</h3>
+
+                     <Row className='justify-content-center py-4'  ref={featuresref}>
+
+                        {features.map((item, index) => (
+                            <Col key={index} xs={5} sm={5} md={2} 
+                            className={`mb-4 d-flex justify-content-center ${inViewFeatures ? 'animate__animated animate__fadeInUp' : ''}`}
+                             style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}>
+                                <Card
+                                    style={{ width: '100%', maxWidth: '280px', backgroundColor: '#f6efdf'  }}
+                                    className='service-card text-center  border-0 '>
+                                    <Card.Img variant="top" src={item.icon} className='' style={{ height: '150px', objectFit: 'contain' }} />
+                                    <Card.Body>
+                                        <Card.Text className='' style={{ color: '#003049' }}>{item.title}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+
+                    </Row>
+
+                </Container>
             </section>
 
             <Chat />
