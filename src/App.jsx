@@ -10,28 +10,30 @@ import { useEffect, useState } from 'react'
 import Blog from './users/pages/Blog'
 import Contact from './users/pages/Contact'
 import 'animate.css';
+import Enquiry from './users/pages/Enquiry'
 
 function App() {
-  
-const [isloading, setIsloading] = useState(false)
 
-useEffect(()=>{
-  setTimeout(()=>{
-    setIsloading(true)
-  },7000)
-},[])
+  const [isloading, setIsloading] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsloading(true)
+    }, 7000)
+  }, [])
   return (
     <>
-   
+
       <Routes>
-        <Route path='/' element={isloading? <Home/>:<Preloader/>} />
-        <Route path='/services' element={<Services/>} />
-        <Route path='/gallery' element={<Gallery/>} />
-        <Route path='/blog' element={<Blog/>} />
-        <Route path='/contact' element={<Contact/>} />
-        <Route path='*' element={<PagenotFound/>} />
+        <Route path='/' element={isloading ? <Home /> : <Preloader />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/enquiry' element={<Enquiry/>} />
+        <Route path='*' element={<PagenotFound />} />
       </Routes>
-   
+
     </>
   )
 }

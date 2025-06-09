@@ -1,18 +1,20 @@
 import Header from '../components/Header'
 import Footer from '../../components/Footer'
-import { Col, Container, Row, Image, Carousel,Card, CardImg } from 'react-bootstrap'
+import { Col, Container, Row, Image, Carousel, Card, CardImg } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useInView } from 'react-intersection-observer'
+import ScrollUp from '../../components/ScrollUp'
+import Chat from '../components/Chat'
 
 function Home() {
   const [heroRef, inViewHero] = useInView({ triggerOnce: true, threshold: 0.5 })
-  const [aboutLeftRef, inViewAboutLeft] = useInView({ triggerOnce: true, threshold: 0.65 })
-  const [aboutRightRef, inViewAboutRight] = useInView({ triggerOnce: true, threshold: 0.65 })
+  const [aboutLeftRef, inViewAboutLeft] = useInView({ triggerOnce: true, threshold: 0.25 })
+  const [aboutRightRef, inViewAboutRight] = useInView({ triggerOnce: true, threshold: 0.25 })
   const [servicesRef, inViewServices] = useInView({ triggerOnce: true, threshold: 0.25 });
   const [galleryRef, inViewGallery] = useInView({ triggerOnce: true, threshold: 0.25 });
   const [quickOrderRef, inViewQuickOrder] = useInView({ triggerOnce: true, threshold: 0.25 })
   const [blogRef, inViewBlog] = useInView({ triggerOnce: true, threshold: 0.25 })
-   const [testimonialsRef, inViewTestimonials] = useInView({ triggerOnce: true, threshold: 0.25 })
+  const [testimonialsRef, inViewTestimonials] = useInView({ triggerOnce: true, threshold: 0.25 })
 
   const serviceItems = [
     { img: 'custlogo.png', text: 'Custom Logos' },
@@ -284,77 +286,80 @@ function Home() {
         <Container>
           <h3 className='text-center fw-bold mb-5' style={{ color: '#003049' }}>Latest Blog Posts</h3>
           <Row className=' flex-column-reverse flex-md-row g-4 justify-content-center align-items-center'>
-            <Col  xs={10} md={4} className={`${inViewBlog ? 'animate__animated animate__fadeInRight' : ''}`}  style={{ animationDelay: inViewBlog ? '1s' : '0s', animationFillMode: 'both' }}>
-           <Card className=" shadow" style={{backgroundColor:'#eaeaea'}}>
-            <Card.Img variant='top' src='/images/threads.png' className=' pt-3 px-3'/>
-              <Card.Body>
-                 <Card.Title className='fw-semibold'style={{ color: '#003049' }}>Blog title</Card.Title>
-              <Card.Text className=''style={{ color: '#003049' }}>12 January 2025</Card.Text>
-              </Card.Body>
-           </Card>
+            <Col xs={10} md={4} className={`${inViewBlog ? 'animate__animated animate__fadeInRight' : ''}`} style={{ animationDelay: inViewBlog ? '1s' : '0s', animationFillMode: 'both' }}>
+              <Card className=" shadow" style={{ backgroundColor: '#eaeaea' }}>
+                <Card.Img variant='top' src='/images/threads.png' className=' pt-3 px-3' />
+                <Card.Body>
+                  <Card.Title className='fw-semibold' style={{ color: '#003049' }}>Blog title</Card.Title>
+                  <Card.Text className='' style={{ color: '#003049' }}>12 January 2025</Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
-            <Col  xs={10} md={4} className={`${inViewBlog ? 'animate__animated animate__fadeInRight' : ''}`}  style={{ animationDelay: inViewBlog ? '0.5s' : '0s', animationFillMode: 'both' }}>
-           <Card className=" shadow" style={{backgroundColor:'#eaeaea'}}>
-            <Card.Img variant='top' src='/images/threads.png' className=' pt-3 px-3'/>
-              <Card.Body>
-                 <Card.Title className='fw-semibold'style={{ color: '#003049' }}>Blog title</Card.Title>
-              <Card.Text className=''style={{ color: '#003049' }}>12 January 2025</Card.Text>
-              </Card.Body>
-           </Card>
+            <Col xs={10} md={4} className={`${inViewBlog ? 'animate__animated animate__fadeInRight' : ''}`} style={{ animationDelay: inViewBlog ? '0.5s' : '0s', animationFillMode: 'both' }}>
+              <Card className=" shadow" style={{ backgroundColor: '#eaeaea' }}>
+                <Card.Img variant='top' src='/images/threads.png' className=' pt-3 px-3' />
+                <Card.Body>
+                  <Card.Title className='fw-semibold' style={{ color: '#003049' }}>Blog title</Card.Title>
+                  <Card.Text className='' style={{ color: '#003049' }}>12 January 2025</Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
-            <Col  xs={10} md={4} className={`${inViewBlog ? 'animate__animated animate__fadeInRight' : ''}`}  style={{ animationDelay: inViewBlog ? '0.2s' : '0s', animationFillMode: 'both' }}>
-           <Card className=" shadow" style={{backgroundColor:'#eaeaea'}}>
-            <Card.Img variant='top' src='/images/threads.png' className=' pt-3 px-3'/>
-              <Card.Body>
-                 <Card.Title className='fw-semibold'style={{ color: '#003049' }}>Blog title</Card.Title>
-              <Card.Text className=''style={{ color: '#003049' }}>12 January 2025</Card.Text>
-              </Card.Body>
-           </Card>
+            <Col xs={10} md={4} className={`${inViewBlog ? 'animate__animated animate__fadeInRight' : ''}`} style={{ animationDelay: inViewBlog ? '0.2s' : '0s', animationFillMode: 'both' }}>
+              <Card className=" shadow" style={{ backgroundColor: '#eaeaea' }}>
+                <Card.Img variant='top' src='/images/threads.png' className=' pt-3 px-3' />
+                <Card.Body>
+                  <Card.Title className='fw-semibold' style={{ color: '#003049' }}>Blog title</Card.Title>
+                  <Card.Text className='' style={{ color: '#003049' }}>12 January 2025</Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
-           <div className='text-center mt-4 '>
-                <Link to="/blog">
-                  <button className={`btn text-white rounded-pill px-4 shadow fw-semibold ${inViewBlog ? 'animate__animated animate__bounce animate__delay-1s' : ''}`} style={{ backgroundColor: '#416668' }}>
-                    See More
-                  </button>
-                </Link>
-              </div>
+          <div className='text-center mt-4 '>
+            <Link to="/blog">
+              <button className={`btn text-white rounded-pill px-4 shadow fw-semibold ${inViewBlog ? 'animate__animated animate__bounce animate__delay-1s' : ''}`} style={{ backgroundColor: '#416668' }}>
+                See More
+              </button>
+            </Link>
+          </div>
         </Container>
       </section>
 
-        {/* testimonials */}
+      {/* testimonials */}
       <section className='py-5' style={{ backgroundColor: '#EEFBFE' }} ref={testimonialsRef}>
         <Container>
           <h3 className='text-center fw-bold mb-5' style={{ color: '#003049' }}>Happy Customers</h3>
           <Row className='g-4 justify-content-center align-items-center'>
-            <Col  xs={10} md={4} className={`${inViewTestimonials ? 'animate__animated animate__fadeInUp' : ''}`}  style={{ animationDelay: inViewTestimonials ? '0.2s' : '0s', animationFillMode: 'both' }}>
-           <Card className="shadow" style={{backgroundColor:'#d9f0f4'}}>           
-              <Card.Body>
-              <p>"Professional, timely, and beautifully detailed. I had logos stitched on uniforms for my team, and they turned out perfect."</p>
-              <p> — Rameez T., Business Owner</p>
-              </Card.Body>
-           </Card>
+            <Col xs={10} md={4} className={`${inViewTestimonials ? 'animate__animated animate__fadeInUp' : ''}`} style={{ animationDelay: inViewTestimonials ? '0.2s' : '0s', animationFillMode: 'both' }}>
+              <Card className="shadow" style={{ backgroundColor: '#d9f0f4' }}>
+                <Card.Body>
+                  <p>"Professional, timely, and beautifully detailed. I had logos stitched on uniforms for my team, and they turned out perfect."</p>
+                  <p> — Rameez T., Business Owner</p>
+                </Card.Body>
+              </Card>
             </Col>
-             <Col  xs={10} md={4} className={`${inViewTestimonials ? 'animate__animated animate__fadeInUp' : ''}`}  style={{ animationDelay: inViewTestimonials ? '0.5s' : '0s', animationFillMode: 'both' }}>
-           <Card className="shadow" style={{backgroundColor:'#d9f0f4'}}>           
-              <Card.Body>
-              <p>"Professional, timely, and beautifully detailed. I had logos stitched on uniforms for my team, and they turned out perfect."</p>
-              <p> — Rameez T., Business Owner</p>
-              </Card.Body>
-           </Card>
+            <Col xs={10} md={4} className={`${inViewTestimonials ? 'animate__animated animate__fadeInUp' : ''}`} style={{ animationDelay: inViewTestimonials ? '0.5s' : '0s', animationFillMode: 'both' }}>
+              <Card className="shadow" style={{ backgroundColor: '#d9f0f4' }}>
+                <Card.Body>
+                  <p>"Professional, timely, and beautifully detailed. I had logos stitched on uniforms for my team, and they turned out perfect."</p>
+                  <p> — Rameez T., Business Owner</p>
+                </Card.Body>
+              </Card>
             </Col>
-             <Col  xs={10} md={4} className={`${inViewTestimonials ? 'animate__animated animate__fadeInUp' : ''}`}  style={{ animationDelay: inViewTestimonials ? '1s' : '0s', animationFillMode: 'both' }}>
-           <Card className="shadow" style={{backgroundColor:'#d9f0f4'}}>           
-              <Card.Body>
-              <p>"Professional, timely, and beautifully detailed. I had logos stitched on uniforms for my team, and they turned out perfect."</p>
-              <p> — Rameez T., Business Owner</p>
-              </Card.Body>
-           </Card>
+            <Col xs={10} md={4} className={`${inViewTestimonials ? 'animate__animated animate__fadeInUp' : ''}`} style={{ animationDelay: inViewTestimonials ? '1s' : '0s', animationFillMode: 'both' }}>
+              <Card className="shadow" style={{ backgroundColor: '#d9f0f4' }}>
+                <Card.Body>
+                  <p>"Professional, timely, and beautifully detailed. I had logos stitched on uniforms for my team, and they turned out perfect."</p>
+                  <p> — Rameez T., Business Owner</p>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </Container>
       </section>
 
+      <Chat/>
+
+      <ScrollUp />
 
       <Footer />
 

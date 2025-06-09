@@ -68,7 +68,7 @@ footer {
 
 
 .hero-section .overlay {
-  background-color: rgba(0, 0, 0, 0.30);
+  background-color: rgba(0, 0, 0, 0.50);
   position: absolute;
   z-index: 0;
 }
@@ -91,7 +91,7 @@ footer {
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 3.3rem;
+    font-size: 4rem;
   }
 }
 

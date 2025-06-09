@@ -31,7 +31,7 @@ function Header() {
 
             {/* Right side buttons */}
             <div className="d-flex gap-2 mt-3 mt-md-0 justify-content-between">
-              <button className="action-btn text-nowrap">Enquire Now</button>
+              <Link to={'/enquiry'}><button className="action-btn text-nowrap">Enquire Now</button></Link>
               <button className="action-btn text-nowrap">Book a Callback</button>
             </div>
           </Navbar.Collapse>
