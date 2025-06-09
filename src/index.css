@@ -111,6 +111,12 @@ footer {
   border: 1px solid #753535;
 }
 
-.chess{
-  background-color: #d9f0f4;
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgb(140, 139, 139);
+  animation: zoom 0.2s;
 }
