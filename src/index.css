@@ -54,6 +54,7 @@ footer {
   background-color: #e3eded;
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+  overflow-x: hidden;
 }
 
 .copyright {
@@ -120,3 +121,6 @@ footer {
   box-shadow: 0 12px 20px rgb(140, 139, 139);
   animation: zoom 0.2s;
 }
+/* *{
+  outline: 1px solid rgb(226, 43, 43);
+} */
